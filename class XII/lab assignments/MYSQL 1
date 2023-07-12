@@ -1,0 +1,37 @@
+CREATE DATABASE assignments;
+USE assigments;
+CREATE TABLE Movies(
+    MovieNo VARCHAR(5) PRIMARY KEY, 
+    Title VARCHAR(30) UNIQUE, 
+    Type VARCHAR(20) NOT NULL, 
+    Rating VARCHAR(5), 
+    Stars VARCHAR(10),
+    Qty INTEGER, 
+    Price FLOAT);
+INSERT INTO Movies
+VALUES
+    ('M001', 'Gone With The Wind', 'Drama', 'G', 'Gable', 4, 39.95),
+    ('M002', 'Friday The 13th', 'Horror', 'R', 'Jason', 2, 69.95),
+    ('M003', 'Top Gun', 'Drama', 'PG', 'Cruise', 7, 49.95),
+    ('M004', 'Splash', 'Comedy', 'PG 13', 'Hanks', 3, 29.95),
+    ('M005', 'Independence Day', 'Drama', 'R', 'Turner', 3, 19.95),
+    ('M006', 'Risky Buisness', 'Comedy', 'R', 'Cruise', 2, 44.95),
+    ('M007', 'Cocoon', 'Scifi', 'PG', 'Ameche', 2, 31.95),
+    ('M008', 'Crocodile Dundee', 'Comedy', 'PG 13', 'Harris', 2, 69.95),
+    ('M009', '101 Dalmatians', 'Comedy', 'G', NULL, 3, 59.95),
+    ('M0010', 'Tootsie', 'Comedy', 'PG', 'Hoffman', 1, 29.95);
+
+SELECT * FROM Movies;
+SELECT * FROM Movies WHERE Stars IS NULL;
+SELECT * FROM Movies WHERE Qty >=3;
+SELECT * FROM Movies WHERE Type = 'DRAMA' AND (PRICE BETWEEN 50 and 100);
+SELECT * FROM MOVIES WHERE(
+    Stars = 'Cruise' OR
+    Stars = 'Harris' OR
+    Stars = 'Hoffman');
+SELECT Title, Price FROM Movies WHERE Price > 20 ORDER BY Price;
+SELECT * FROM Movies ORDER BY Qty DESC; 
+SELECT MovieNo, Title, Qty*Price as CurrentValue FROM Movies;
+SELECT Title FROM Movies WHERE LEFT(Title,1) = 'C';
+SELECT Title FROM Movies WHERE Title LIKE '_o%';
+SELECT Title, LENGTH(Title) as Length FROM Movies;
