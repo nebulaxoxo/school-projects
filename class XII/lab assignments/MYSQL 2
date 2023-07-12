@@ -1,0 +1,15 @@
+USE assignments;
+CREATE TABLE Faculty(
+    F_ID VARCHAR(3) PRIMARY KEY,
+    Fname VARCHAR(10) NOT NULL,
+    Lname VARCHAR(10) NOT NULL,
+    Hire_Date DATE,
+    Salary FLOAT);
+
+INSERT INTO Faculty
+VALUES
+    ('102', 'Amit', 'Mishra', '1998-10-12', 12000),
+    ('103', 'Nitin', 'Vyas', '1994-12-24', 8000),
+    ('104', 'Rakshit', 'Soni', '2001-5-18', 14000),
+    ('105', 'Rashmi', 'Malhotra', '2004-9-11', 11000),
+    ('106', 'Sulekha', 'Srivastava', '2006-6-5', 10000);
