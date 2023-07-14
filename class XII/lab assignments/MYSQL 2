@@ -13,3 +13,22 @@ VALUES
     ('104', 'Rakshit', 'Soni', '2001-5-18', 14000),
     ('105', 'Rashmi', 'Malhotra', '2004-9-11', 11000),
     ('106', 'Sulekha', 'Srivastava', '2006-6-5', 10000);
+
+USE assignments;
+CREATE TABLE Course(
+    C_ID VARCHAR(3) PRIMARY KEY,
+    F_ID VARCHAR(3),
+    Cname VARCHAR(30) NOT NULL,
+    Fees FLOAT,
+    FOREIGN KEY (F_ID) REFERENCES Faculty(F_ID) );
+
+
+INSERT INTO Course
+VALUES
+     ('C21', '102', 'Grid Computing', 40000),
+     ('C22', '106', 'System Design', 16000),
+     ('C23', '104', 'Computer Security', 8000),
+     ('C24', '106', 'Human Biology', 15000),
+     ('C25', '102', 'Computer Network', 20000),
+     ('C26', '105', 'Visual Basic', 6000);
+
