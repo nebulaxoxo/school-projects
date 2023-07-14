@@ -14,13 +14,13 @@ VALUES
     ('105', 'Rashmi', 'Malhotra', '2004-9-11', 11000),
     ('106', 'Sulekha', 'Srivastava', '2006-6-5', 10000);
 
-USE assignments;
 CREATE TABLE Course(
     C_ID VARCHAR(3) PRIMARY KEY,
     F_ID VARCHAR(3),
     Cname VARCHAR(30) NOT NULL,
     Fees FLOAT,
-    FOREIGN KEY (F_ID) REFERENCES Faculty(F_ID) );
+    FOREIGN KEY (F_ID) REFERENCES Faculty(F_ID) 
+    ON DELETE CASCADE);
 
 
 INSERT INTO Course
